@@ -1,0 +1,11 @@
+c:\users\mts\documents\visual studio 2012\Projects\monplc1\monplc1\bin\Debug\monplc1.exe.config
+c:\users\mts\documents\visual studio 2012\Projects\monplc1\monplc1\bin\Debug\monplc1.exe
+c:\users\mts\documents\visual studio 2012\Projects\monplc1\monplc1\bin\Debug\monplc1.pdb
+c:\users\mts\documents\visual studio 2012\Projects\monplc1\monplc1\bin\Debug\CalithaLib.dll
+c:\users\mts\documents\visual studio 2012\Projects\monplc1\monplc1\bin\Debug\GoldParserEngine.dll
+c:\users\mts\documents\visual studio 2012\Projects\monplc1\monplc1\obj\Debug\monplc1.csprojResolveAssemblyReference.cache
+c:\users\mts\documents\visual studio 2012\Projects\monplc1\monplc1\obj\Debug\monplc1.Form1.resources
+c:\users\mts\documents\visual studio 2012\Projects\monplc1\monplc1\obj\Debug\monplc1.Properties.Resources.resources
+c:\users\mts\documents\visual studio 2012\Projects\monplc1\monplc1\obj\Debug\monplc1.csproj.GenerateResource.Cache
+c:\users\mts\documents\visual studio 2012\Projects\monplc1\monplc1\obj\Debug\monplc1.exe
+c:\users\mts\documents\visual studio 2012\Projects\monplc1\monplc1\obj\Debug\monplc1.pdb

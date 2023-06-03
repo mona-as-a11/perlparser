@@ -1,0 +1,89 @@
+"Start Symbol"= < perl language>
+!--------Terminal----
+Id= ('@'|'$'|'%')?{letter}
+Digit={digit}
+    
+!-------Rules------
+<perl language> ::= '{' <code> '}' 
+                    
+<code>::= <statment>
+            |<statment><code>
+            
+<statment> ::= <declaration>
+           |<assig>
+           |<if_statment>
+           |<for_statment>
+           |<foreach_statment>  
+           |<while_statment>
+           |<switch_statment>
+           |<method>
+           |<call_method>
+!-------------declration----           
+<declaration> ::= my <id>  ';'
+               |my <id> '=' <expression> ';'
+               
+!-----------assign----
+
+<assig>::= <id> '='<expression> ';'         
+<id> ::= Id
+      
+<expression> ::= <expression>'+'<term>
+        |<expression>'-'<term>
+        |<term>
+        
+<term> ::=<term>'*'<factor>
+        |<term>'/'<factor>
+        |<term>'%'<factor>
+        |<factor>
+        
+<factor>::=<factor>'**'<exp>
+         |<exp>
+         
+<exp>::= '('<expression>')'
+      |<digit>
+      |<id>
+      
+<digit>::= Digit
+        
+
+         
+!--------------ifstatment---------- 
+<if_statment>::=if'('<cond>')''{'<code>'}'
+          |if'('<cond>')''{'<code>'}' else  '{'<code>'}'
+          |if'('<cond>')''{'<code>'}' elsif'('<cond>')' '{'<code>'}' elsif'('<cond>')' '{'<code>'}' else '{'<code>'}'
+          
+<cond>::=<expression><operation><expression>
+       
+<operation>::='>'|'<'|'=='|'!='
+            
+!-------------for statment-------------
+<for_statment>::=for'('<initial>';'<cond>';'<dec inc_stmt>')' '{'<code>'}'
+           |for <id> in <id>
+            |for <id> '=' <digit> ':' <digit>
+            
+<initial>::=<assig>|<declaration>
+          
+<dec inc_stmt>::='++'<id>
+              |'--'<id>
+              |<id>'++'
+              |<id>'--'
+ !------------foreach statment----------
+<foreach_statment> ::= foreach <id> '('<list>')' '{'<code>'}'
+ <list>::=<id> | <id> ','  <list>          
+                       
+!------------while statment----------------------
+<while_statment>::= '('<cond>')' '{'<code>'}'               
+
+
+!---------------------------------switch statment-----------------------------------------
+<switch_statment>::= switch '(' <id> ')' '{'<case>'}'  else '{'<code>'}''}'
+<case>::=case <id> '{' <code> next';' '}'|case <id> '{' <code> next';' '}'<case>
+      
+ !---------------------- Declaration  methods----------
+<method> ::=sub <name_method>  '{' <body>  '}'       
+ <body> ::=  <declaration>
+           | <declaration><body>
+            
+ <name_method> ::= <id>|<digit>        
+ !---------------------calling methods---------
+ <call_method> ::= sub  <name_method> '{'<declaration>'}'
